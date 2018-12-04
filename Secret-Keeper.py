@@ -35,14 +35,14 @@ def update():
     Secret_Keeper = requests.get("https://raw.githubusercontent.com/Sameera-Madhushan/Secret-Keeper/master/Secret-Keeper.py").content.decode(
         "UTF-8")
     if version not in Secret_Keeper:
-        co = input("A new version of Secret Keeper is available. Would you like to update?[yes/no] - ").lower()
+        co = input("A new version of Secret Keeper is available. Would you like to update? [yes/no] - ").lower()
         if co == "yes":
             os.system('cd .. && rm -r Secret-Keeper && git clone https://github.com/Sameera-Madhushan/Secret-Keeper')
         if co == "no":
             print(Fore.LIGHTBLUE_EX + banner)
             choice()
         else:
-            digg = str(input("Sorry!Invalid Selection. Do You Wish to Quit[yes/no] - ").lower())
+            digg = str(input("Sorry! Invalid Selection. Do You Wish to Quit [yes/no] - ").lower())
             if digg == "yes":
                 quit()
                 if digg == "no":
