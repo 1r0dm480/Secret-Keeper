@@ -35,14 +35,14 @@ def update():
     Secret_Keeper = requests.get("https://raw.githubusercontent.com/Sameera-Madhushan/Secret-Keeper/master/Secret-Keeper.py").content.decode(
         "UTF-8")
     if version not in Secret_Keeper:
-        co = input("A new version of Secret Keeper is available. Would you like to update?[yes/no] - ").lower()
+        co = input("A new version of Secret Keeper is available. Would you like to update? [yes/no] - ").lower()
         if co == "yes":
             os.system('cd .. && rm -r Secret-Keeper && git clone https://github.com/Sameera-Madhushan/Secret-Keeper')
         if co == "no":
             print(Fore.LIGHTBLUE_EX + banner)
             choice()
         else:
-            digg = str(input("Sorry!Invalid Selection. Do You Wish to Quit[yes/no] - ").lower())
+            digg = str(input("Sorry! Invalid selection. Do you wish to quit [yes/no] - ").lower())
             if digg == "yes":
                 quit()
                 if digg == "no":
@@ -51,11 +51,11 @@ def update():
                 else:
                     exit()
     else:
-        print("Secret Keeper is Upto Date.")
+        print("Secret Keeper is up to date.")
         exit()
 
 def quit():
-    alpha = input("Are You Sure?[yes/no] - ").lower()
+    alpha = input("Are you sure? [yes/no] - ").lower()
     if alpha == "yes":
         exit()
     if alpha == "no":
@@ -121,9 +121,9 @@ def choice():
                     salt = b'\x9aX\x10\xa6^\x1fUVu\xc0\xa2\xc8\xff\xceOV'
                     key_check = Crypto.Protocol.KDF.PBKDF2(password=key_confirm, salt=salt, dkLen=32, count=10000)
                     if key_check == setup[:32]:
-                        print("Password Correct!")
+                        print("Password correct!")
                     else:
-                        print("Wrong Password!")
+                        print("Wrong password!")
                         sys.exit(0)
 
                     iv = setup[32:]
